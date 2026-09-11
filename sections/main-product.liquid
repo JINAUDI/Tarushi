@@ -1,0 +1,6 @@
+<section class="tarushi-section tarushi-product-page">
+  <div class="tarushi-product-page__media">{{ product.featured_image | image_url: width: 1200 | image_tag: loading: 'eager', alt: product.title }}</div>
+  <div class="tarushi-product-page__info"><p class="tarushi-kicker">Tarushi jewellery</p><h1>{{ product.title }}</h1><div class="tarushi-price">{{ product.selected_or_first_available_variant.price | money }}</div>{{ product.description }}
+    {% form 'product', product, class: 'tarushi-product-form' %}<input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}"><label for="Quantity">Quantity</label><input id="Quantity" name="quantity" type="number" min="1" value="1"><button class="tarushi-button" type="submit">Add to cart</button>{% endform %}
+  </div>
+</section>

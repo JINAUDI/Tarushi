@@ -1,0 +1,23 @@
+<header class="tarushi-header">
+  <div class="tarushi-header__inner">
+    <a class="tarushi-header__search" href="{{ routes.search_url }}" aria-label="Search">⌕ <span>Search</span></a>
+    <a class="tarushi-header__logo" href="{{ routes.root_url }}"><img src="{{ 'tarushi-logo.png' | asset_url }}" alt="{{ shop.name | escape }}"></a>
+    <nav class="tarushi-nav" aria-label="Main navigation">
+      <a href="{{ routes.root_url }}">Home</a>
+      <a href="/pages/about-us">About Us</a>
+      <a href="/pages/gift-card">Gift Card</a>
+      <a href="/pages/contact-us">Contact Us</a>
+      <details class="tarushi-nav__collections">
+        <summary>Collections</summary>
+        <div class="tarushi-nav__dropdown">
+          {% for collection in collections %}{% if collection.handle != 'all' %}<a href="{{ collection.url }}">{{ collection.title }}</a>{% endif %}{% endfor %}
+        </div>
+      </details>
+    </nav>
+    <div class="tarushi-header__actions">
+      <a href="{{ routes.account_url }}" aria-label="Account">♙</a>
+      <a href="{{ routes.cart_url }}" aria-label="Cart">♧ <sup>{{ cart.item_count }}</sup></a>
+      <button type="button" class="tarushi-menu-toggle" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>

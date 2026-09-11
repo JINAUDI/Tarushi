@@ -1,0 +1,10 @@
+<section class="tarushi-section tarushi-featured">
+  <div class="tarushi-section__heading"><p class="tarushi-kicker">Grace, earned.</p><h2>{{ section.settings.heading }}</h2></div>
+  {% assign featured = collections[section.settings.collection] %}
+  <div class="tarushi-products">
+    {% for product in featured.products limit: section.settings.products_to_show %}
+      <article class="tarushi-product-card"><a href="{{ product.url }}"><div class="tarushi-product-card__image">{{ product.featured_image | image_url: width: 800 | image_tag: loading: 'lazy', alt: product.title }}</div><h3>{{ product.title }}</h3><p>{{ product.price | money }}</p></a></article>
+    {% else %}<p class="tarushi-empty">Add products to this collection in Shopify admin.</p>{% endfor %}
+  </div>
+</section>
+{% schema %}{"name":"Featured collection","settings":[{"type":"text","id":"heading","label":"Heading","default":"Latest beauty"},{"type":"collection","id":"collection","label":"Collection"},{"type":"range","id":"products_to_show","min":2,"max":8,"step":1,"label":"Products to show","default":4}],"presets":[{"name":"Featured collection"}]}{% endschema %}
