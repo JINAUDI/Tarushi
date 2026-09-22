@@ -13,17 +13,182 @@
         "bottom_right": "Made with intention"
       },
       "blocks": {
-        "rings": {"type":"category","settings":{"eyebrow":"Quiet strength","title":"Rings"}},
-        "earrings": {"type":"category","settings":{"eyebrow":"A little light","title":"Earrings"}},
-        "necklaces": {"type":"category","settings":{"eyebrow":"Fine lines","title":"Necklaces"}},
-        "bangles": {"type":"category","settings":{"eyebrow":"Every curve","title":"Bangles"}},
-        "pendants": {"type":"category","settings":{"eyebrow":"Made personal","title":"Pendants"}}
+        "rings": {
+          "type": "category",
+          "settings": {
+            "eyebrow": "Quiet strength",
+            "title": "Rings"
+          }
+        },
+        "earrings": {
+          "type": "category",
+          "settings": {
+            "eyebrow": "A little light",
+            "title": "Earrings"
+          }
+        },
+        "necklaces": {
+          "type": "category",
+          "settings": {
+            "eyebrow": "Fine lines",
+            "title": "Necklaces"
+          }
+        },
+        "bangles": {
+          "type": "category",
+          "settings": {
+            "eyebrow": "Every curve",
+            "title": "Bangles"
+          }
+        },
+        "pendants": {
+          "type": "category",
+          "settings": {
+            "eyebrow": "Made personal",
+            "title": "Pendants"
+          }
+        }
       },
-      "block_order": ["rings","earrings","necklaces","bangles","pendants"]
+      "block_order": [
+        "rings",
+        "earrings",
+        "necklaces",
+        "bangles",
+        "pendants"
+      ]
     },
-    "featured": {"type":"featured-collection","settings":{"heading":"Latest beauty","products_to_show":4}},
-    "story": {"type":"image-with-text","settings":{"eyebrow":"Grace, earned.","heading":"The Tarushi story","text":"<p>Everyday jewellery for the woman who shines, conquers and stands apart.</p>"}},
-    "welcome": {"type":"rich-text","settings":{"eyebrow":"Everyday gold. Timeless victory.","heading":"Worn by women who’ve already won.","text":"<p>Discover pieces made to become part of your everyday.</p>"}}
+    "featured": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "Latest beauty",
+        "products_to_show": 4
+      }
+    },
+    "story": {
+      "type": "image-with-text",
+      "settings": {
+        "eyebrow": "Grace, earned.",
+        "heading": "The Tarushi story",
+        "text": "<p>Everyday jewellery for the woman who shines, conquers and stands apart.</p>"
+      }
+    },
+    "welcome": {
+      "type": "rich-text",
+      "settings": {
+        "eyebrow": "Everyday gold. Timeless victory.",
+        "heading": "Worn by women who’ve already won.",
+        "text": "<p>Discover pieces made to become part of your everyday.</p>"
+      }
+    },
+    "categories": {
+      "type": "category-showcase",
+      "settings": {
+        "heading": "Discover Tarushi",
+        "description": "Jewellery for the woman who has already arrived."
+      },
+      "blocks": {
+        "earrings": {
+          "settings": {
+            "title": "Earrings",
+            "eyebrow": "A little light"
+          },
+          "type": "category"
+        },
+        "pendants": {
+          "settings": {
+            "title": "Pendants",
+            "eyebrow": "Made personal"
+          },
+          "type": "category"
+        },
+        "rings": {
+          "settings": {
+            "title": "Rings",
+            "eyebrow": "Quiet strength"
+          },
+          "type": "category"
+        },
+        "necklaces": {
+          "settings": {
+            "title": "Necklaces",
+            "eyebrow": "Fine lines"
+          },
+          "type": "category"
+        },
+        "bangles": {
+          "settings": {
+            "title": "Bangles",
+            "eyebrow": "Every curve"
+          },
+          "type": "category"
+        }
+      },
+      "block_order": [
+        "rings",
+        "earrings",
+        "necklaces",
+        "bangles",
+        "pendants"
+      ]
+    },
+    "gallery": {
+      "type": "story-gallery",
+      "settings": {
+        "heading": "The Tarushi story",
+        "eyebrow": "Instagram"
+      },
+      "blocks": {
+        "four": {
+          "settings": {},
+          "type": "image"
+        },
+        "three": {
+          "settings": {},
+          "type": "image"
+        },
+        "seven": {
+          "settings": {},
+          "type": "image"
+        },
+        "two": {
+          "settings": {},
+          "type": "image"
+        },
+        "five": {
+          "settings": {},
+          "type": "image"
+        },
+        "six": {
+          "settings": {},
+          "type": "image"
+        },
+        "eight": {
+          "settings": {},
+          "type": "image"
+        },
+        "one": {
+          "settings": {},
+          "type": "image"
+        }
+      },
+      "block_order": [
+        "one",
+        "two",
+        "three",
+        "four",
+        "five",
+        "six",
+        "seven",
+        "eight"
+      ]
+    }
   },
-  "order": ["hero","featured","story","welcome"]
+  "order": [
+    "hero",
+    "featured",
+    "categories",
+    "story",
+    "gallery",
+    "welcome"
+  ]
 }
