@@ -1,23 +1,11 @@
 <header class="tarushi-header">
   <div class="tarushi-header__inner">
-    <a class="tarushi-header__search" href="{{ routes.search_url }}" aria-label="Search">⌕ <span>Search</span></a>
-    <a class="tarushi-header__logo" href="{{ routes.root_url }}"><img src="{{ 'tarushi-logo.png' | asset_url }}" alt="{{ shop.name | escape }}"></a>
+    <a class="tarushi-header__search" href="{{ routes.search_url }}" aria-label="Search">⌕ <span>{{ section.settings.search_label }}</span></a>
+    <a class="tarushi-header__logo" href="{{ routes.root_url }}">{% if section.settings.logo != blank %}{{ section.settings.logo | image_url: width: 360 | image_tag: loading: 'eager', alt: shop.name }}{% else %}<img src="{{ 'tarushi-logo.png' | asset_url }}" alt="{{ shop.name | escape }}">{% endif %}</a>
     <nav class="tarushi-nav" aria-label="Main navigation">
-      <a href="{{ routes.root_url }}">Home</a>
-      <a href="/pages/about-us">About Us</a>
-      <a href="/pages/gift-card">Gift Card</a>
-      <a href="/pages/contact-us">Contact Us</a>
-      <details class="tarushi-nav__collections">
-        <summary>Collections</summary>
-        <div class="tarushi-nav__dropdown">
-          {% for collection in collections %}{% if collection.handle != 'all' %}<a href="{{ collection.url }}">{{ collection.title }}</a>{% endif %}{% endfor %}
-        </div>
-      </details>
+      {% if section.settings.menu != blank %}{% for link in section.settings.menu.links %}{% if link.links != blank %}<details class="tarushi-nav__collections"><summary>{{ link.title }}</summary><div class="tarushi-nav__dropdown">{% for child in link.links %}<a href="{{ child.url }}">{{ child.title }}</a>{% endfor %}</div></details>{% else %}<a href="{{ link.url }}">{{ link.title }}</a>{% endif %}{% endfor %}{% else %}<a href="{{ routes.root_url }}">Home</a><a href="/pages/about-us">About Us</a><a href="/pages/gift-card">Gift Card</a><a href="/pages/contact-us">Contact Us</a>{% endif %}
     </nav>
-    <div class="tarushi-header__actions">
-      <a href="{{ routes.account_url }}" aria-label="Account">♙</a>
-      <a href="{{ routes.cart_url }}" aria-label="Cart">♧ <sup>{{ cart.item_count }}</sup></a>
-      <button type="button" class="tarushi-menu-toggle" aria-label="Open menu">☰</button>
-    </div>
+    <div class="tarushi-header__actions"><a href="{{ routes.account_url }}" aria-label="Account">♙</a><a href="{{ routes.cart_url }}" aria-label="Cart">♧ <sup>{{ cart.item_count }}</sup></a><button type="button" class="tarushi-menu-toggle" aria-label="Open menu">☰</button></div>
   </div>
 </header>
+{% schema %}{"name":"Header","settings":[{"type":"image_picker","id":"logo","label":"Logo"},{"type":"link_list","id":"menu","label":"Navigation menu","default":"main-menu"},{"type":"text","id":"search_label","label":"Search label","default":"Search"}],"presets":[{"name":"Header"}]}{% endschema %}
